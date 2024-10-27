@@ -15,7 +15,7 @@ public class Main {
         }
 
         Scanner scanner = new Scanner(System.in);
-
+        boolean boardNotFull = board[0][0] == null || board[0][1] == null || board[0][2] == null || board[1][0] == null || board[1][1] == null || board[1][2] == null || board[2][0] == null || board[2][1] == null || board[2][2] == null;
 
         System.out.println("***** TIC TAC TOE *****\n\nPlease choose your symbol, you'll be player 1:");
         String player1Symbol = scanner.next();
@@ -36,8 +36,8 @@ public class Main {
 
 
         //game
-        while (board[0][0] == null || board[0][1] == null || board[0][2] == null || board[1][0] == null || board[1][1] == null || board[1][2] == null || board[2][0] == null || board[2][1] == null || board[2][2] == null) {
-            
+        while (boardNotFull) {
+
             //Player 1
             System.out.println("Player 1's turn");
             System.out.println("Choose a line: ");
@@ -45,30 +45,30 @@ public class Main {
             System.out.println("Choose a column: ");
             int column = scanner.nextInt();
 
-            while ((line > 2 || column > 2)|| (boardCheck[line][column] == true)){
-            if (line > 2 || column > 2){
-                System.out.println("Choose a valid position from these numbers: (0 - 1 - 2)");
-                System.out.println("Choose a line: ");
-                line = scanner.nextInt();
-                System.out.println("Choose a column: ");
-                column = scanner.nextInt();
+            while ((line > 2 || column > 2)|| (boardCheck[line][column] == true)) {
+                if (line > 2 || column > 2) {
+                    System.out.println("Choose a valid position from these numbers: (0 - 1 - 2)");
+                    System.out.println("Choose a line: ");
+                    line = scanner.nextInt();
+                    System.out.println("Choose a column: ");
+                    column = scanner.nextInt();
+                }
+                if (boardCheck[line][column] == true) {
+                    System.out.println("That position has already been used."); //Replays the turn if the spot chosen has already been taken
+                    System.out.println("Choose a line: ");
+                    line = scanner.nextInt();
+                    System.out.println("Choose a column: ");
+                    column = scanner.nextInt();
+                }
             }
-            if (boardCheck[line][column] == true) {
-                System.out.println("That position has already been used."); //Replays the turn if the spot chosen has already been taken
-                System.out.println("Choose a line: ");
-                line = scanner.nextInt();
-                System.out.println("Choose a column: ");
-                column = scanner.nextInt();
-            }
-
             board[line][column] = player1Symbol;
             boardCheck[line][column] = true;
 
             boardPrint(board);
-            }
+
 
             //Player 2 (The "Big" if is used to check if the board is full or not)
-            if(board[0][0] == null || board[0][1] == null || board[0][2] == null || board[1][0] == null || board[1][1] == null || board[1][2] == null || board[2][0] == null || board[2][1] == null || board[2][2] == null) {
+            if(boardNotFull) {
                 System.out.println("Player 2's turn");
                 System.out.println("Choose a line: ");
                 line = scanner.nextInt();
