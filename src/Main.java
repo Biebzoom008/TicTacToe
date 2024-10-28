@@ -11,11 +11,13 @@ public class Main {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 boardCheck[i][j] = false;
+                board[i][j] = "empty";
             }
         }
 
+
         Scanner scanner = new Scanner(System.in);
-        boolean boardNotFull = board[0][0] == null || board[0][1] == null || board[0][2] == null || board[1][0] == null || board[1][1] == null || board[1][2] == null || board[2][0] == null || board[2][1] == null || board[2][2] == null;
+        boolean boardNotFull = board[0][0].equals("empty") || board[0][1].equals("empty") || board[0][2].equals("empty") || board[1][0].equals("empty") || board[1][1].equals("empty") || board[1][2].equals("empty") || board[2][0].equals("empty") || board[2][1].equals("empty") || board[2][2].equals("empty");
 
         System.out.println("***** TIC TAC TOE *****\n\nPlease choose your symbol, you'll be player 1:");
         String player1Symbol = scanner.next();
@@ -61,13 +63,83 @@ public class Main {
                     column = scanner.nextInt();
                 }
             }
+            //assigns the player 1 symbol to the position chosen, and its position is set to true
             board[line][column] = player1Symbol;
             boardCheck[line][column] = true;
 
             boardPrint(board);
 
+            //win condition
+            if(board[0][0].equals(board[0][1].equals(board[0][2].equals(player1Symbol))) || board[0][0].equals(board[0][1].equals(board[0][2].equals(player2Symbol)))){
+                if(board[0][0].equals(player1Symbol)) {
+                    System.out.println("Congrats, player 1 wins!!");
+                    break;
+                } else {System.out.println("Congrats, player 2 wins!!");
+                    break;
+                }
+            }
+            else if(board[1][0].equals(board[1][1].equals(board[1][2].equals(player1Symbol))) || board[1][0].equals(board[1][1].equals(board[1][2].equals(player2Symbol)))){
+                if(board[1][0].equals(player1Symbol)) {
+                    System.out.println("Congrats, player 1 wins!!");
+                    break;
+                } else {System.out.println("Congrats, player 2 wins!!");
+                    break;
+                }
+            }
+            else if(board[2][0].equals(board[2][1].equals(board[2][2].equals(player1Symbol))) || board[2][0].equals(board[2][1].equals(board[2][2].equals(player2Symbol)))){
+                if(board[2][0].equals(player1Symbol)) {
+                    System.out.println("Congrats, player 1 wins!!");
+                    break;
+                } else {System.out.println("Congrats, player 2 wins!!");
+                    break;
+                }
+            }
+            else if(board[0][0].equals(board[1][0].equals(board[2][0].equals(player1Symbol))) || board[0][0].equals(board[1][0].equals(board[2][0].equals(player2Symbol)))){
+                if(board[0][0].equals(player1Symbol)) {
+                    System.out.println("Congrats, player 1 wins!!");
+                    break;
+                } else {System.out.println("Congrats, player 2 wins!!");
+                    break;
+                }
+            }
+            else if(board[0][1].equals(board[1][1].equals(board[2][1].equals(player1Symbol))) || board[0][0].equals(board[1][1].equals(board[2][1].equals(player2Symbol)))){
+                if(board[0][1].equals(player1Symbol)) {
+                    System.out.println("Congrats, player 1 wins!!");
+                    break;
+                } else {System.out.println("Congrats, player 2 wins!!");
+                    break;
+                }
+            }
+            else if(board[0][2].equals(board[1][2].equals(board[2][2].equals(player1Symbol))) || board[0][2].equals(board[1][2].equals(board[2][2].equals(player2Symbol)))){
+                if(board[0][2].equals(player1Symbol)) {
+                    System.out.println("Congrats, player 1 wins!!");
+                    break;
+                } else {System.out.println("Congrats, player 2 wins!!");
+                    break;
+                }
+            }
+            else if(board[0][0].equals(board[1][1].equals(board[2][2].equals(player1Symbol))) || board[0][0].equals(board[1][1].equals(board[2][2].equals(player2Symbol)))){
+                if(board[0][0].equals(player1Symbol)) {
+                    System.out.println("Congrats, player 1 wins!!");
+                    break;
+                } else {System.out.println("Congrats, player 2 wins!!");
+                    break;
+                }
+            }
+            else if(board[0][2].equals(board[1][1].equals(board[2][0].equals(player1Symbol))) || board[0][2].equals(board[1][1].equals(board[2][0].equals(player2Symbol)))){
+                if(board[2][0].equals(player1Symbol)) {
+                    System.out.println("Congrats, player 1 wins!!");
+                    break;
+                } else {System.out.println("Congrats, player 2 wins!!");
+                    break;
+                }
+            }
+
+
+
 
             //Player 2 (The "Big" if is used to check if the board is full or not)
+            //if yes, then player 2 won't play again and again
             if(boardNotFull) {
                 System.out.println("Player 2's turn");
                 System.out.println("Choose a line: ");
@@ -137,6 +209,57 @@ public class Main {
 
             }
 
+        }
+    }
+
+    public static void win (String[][] board, String player1Symbol){
+        if(board[0][0].equals(board[0][1].equals(board[0][2]))){
+            if(board[0][0].equals(player1Symbol)) {
+                System.out.println("Congrats, player 1 wins!!");
+            } else {System.out.println("Congrats, player 2 wins!!");
+            }
+        }
+        else if(board[1][0].equals(board[1][1].equals(board[1][2]))){
+            if(board[1][0].equals(player1Symbol)) {
+                System.out.println("Congrats, player 1 wins!!");
+            } else {System.out.println("Congrats, player 2 wins!!");
+            }
+        }
+        else if(board[2][0].equals(board[2][1].equals(board[2][2]))){
+            if(board[2][0].equals(player1Symbol)) {
+                System.out.println("Congrats, player 1 wins!!");
+            } else {System.out.println("Congrats, player 2 wins!!");
+            }
+        }
+        else if(board[0][0].equals(board[1][0].equals(board[2][0]))){
+            if(board[0][0].equals(player1Symbol)) {
+                System.out.println("Congrats, player 1 wins!!");
+            } else {System.out.println("Congrats, player 2 wins!!");
+            }
+        }
+        else if(board[0][1].equals(board[1][1].equals(board[2][1]))){
+            if(board[0][1].equals(player1Symbol)) {
+                System.out.println("Congrats, player 1 wins!!");
+            } else {System.out.println("Congrats, player 2 wins!!");
+            }
+        }
+        else if(board[0][2].equals(board[1][2].equals(board[2][2]))){
+            if(board[0][2].equals(player1Symbol)) {
+                System.out.println("Congrats, player 1 wins!!");
+            } else {System.out.println("Congrats, player 2 wins!!");
+            }
+        }
+        else if(board[0][0].equals(board[1][1].equals(board[2][2]))){
+            if(board[0][0].equals(player1Symbol)) {
+                System.out.println("Congrats, player 1 wins!!");
+            } else {System.out.println("Congrats, player 2 wins!!");
+            }
+        }
+        else if(board[0][2].equals(board[1][1].equals(board[2][0]))){
+            if(board[2][0].equals(player1Symbol)) {
+                System.out.println("Congrats, player 1 wins!!");
+            } else {System.out.println("Congrats, player 2 wins!!");
+            }
         }
     }
 }
