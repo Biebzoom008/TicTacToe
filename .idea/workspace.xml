@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da3b8f02-29c4-4166-9c78-b60086654d55" name="Changes" comment="Small fixes&#10;&#10;Player 1 now works properly&#10;The &quot;error loop&quot; now only encapsulates the errors&#10;&#10;To check if the board is full or not has been transferred into a variable to make the code more easily readable">
+    <list default="true" id="da3b8f02-29c4-4166-9c78-b60086654d55" name="Changes" comment="Win conditions implemented&#10;&#10;I made a bunch of if statements to check if the win condition was fulfilled but I don't know how to make it work inside the loop. &#10;I used .equals to check if the same symbol is found 3 times in a row and if it is equal to either the symbol of player 1 or player 2&#10;&#10;It's a whole mess but I'll see later how to simplify everything">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -37,16 +37,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Language Defaults",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -55,6 +69,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1730060402797</updated>
+      <workItem from="1730149740823" duration="228000" />
+      <workItem from="1730150113979" duration="1882000" />
+      <workItem from="1730152139559" duration="806000" />
+      <workItem from="1730183166327" duration="2262000" />
     </task>
     <task id="LOCAL-00001" summary="First Version&#10;Unfinished">
       <option name="closed" value="true" />
@@ -80,8 +98,19 @@
       <option name="project" value="LOCAL" />
       <updated>1730108432928</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Win conditions implemented&#10;&#10;I made a bunch of if statements to check if the win condition was fulfilled but I don't know how to make it work inside the loop. &#10;I used .equals to check if the same symbol is found 3 times in a row and if it is equal to either the symbol of player 1 or player 2&#10;&#10;It's a whole mess but I'll see later how to simplify everything">
+      <option name="closed" value="true" />
+      <created>1730113045410</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1730113045410</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -97,17 +126,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Version&#10;Unfinished" />
     <MESSAGE value="Small fixes&#10;&#10;Player 1 now works properly&#10;The &quot;error loop&quot; now only encapsulates the errors&#10;&#10;To check if the board is full or not has been transferred into a variable to make the code more easily readable" />
-    <option name="LAST_COMMIT_MESSAGE" value="Small fixes&#10;&#10;Player 1 now works properly&#10;The &quot;error loop&quot; now only encapsulates the errors&#10;&#10;To check if the board is full or not has been transferred into a variable to make the code more easily readable" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>72</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Win conditions implemented&#10;&#10;I made a bunch of if statements to check if the win condition was fulfilled but I don't know how to make it work inside the loop. &#10;I used .equals to check if the same symbol is found 3 times in a row and if it is equal to either the symbol of player 1 or player 2&#10;&#10;It's a whole mess but I'll see later how to simplify everything" />
+    <option name="LAST_COMMIT_MESSAGE" value="Win conditions implemented&#10;&#10;I made a bunch of if statements to check if the win condition was fulfilled but I don't know how to make it work inside the loop. &#10;I used .equals to check if the same symbol is found 3 times in a row and if it is equal to either the symbol of player 1 or player 2&#10;&#10;It's a whole mess but I'll see later how to simplify everything" />
   </component>
 </project>
